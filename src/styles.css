@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}

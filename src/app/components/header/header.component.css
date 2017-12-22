@@ -1,0 +1,4 @@
+#navbarNav ul{
+    width:300px;
+    flex-grow:0!important
+}

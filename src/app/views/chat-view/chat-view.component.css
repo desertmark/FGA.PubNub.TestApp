@@ -1,0 +1,17 @@
+#input-row{
+    position:fixed;
+    bottom: 5px;
+    width:100%;    
+}
+#input-row div{
+    padding:5px!important;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    padding:0; 
+}
+
+.message p {
+    font-size:10px;
+}

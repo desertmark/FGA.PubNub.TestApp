@@ -1,0 +1,29 @@
+<div id="chat-view" class="container-fluid">
+  <pre>{{Name}}</pre>
+  <div class="row" id="message-container">
+    <div class="col-sm-12">
+      <ul>
+        <li *ngFor="let item of messages">
+          <div class="alert alert-dark message" role="alert">
+            <p class=".text-warning">{{item.message.name}}</p>
+            {{item.message.text}}
+            <p class="text-right font-weight-light">{{item.message.time | date:'shortTime'}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row bg-light" id="input-row">
+    <div class="col-sm-10">
+      <input 
+        #msg
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="message"
+        placeholder="write something...">    
+    </div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-success w-100" (click)="send()" name="msgBox">Send</button>
+    </div>
+  </div>
+</div>
