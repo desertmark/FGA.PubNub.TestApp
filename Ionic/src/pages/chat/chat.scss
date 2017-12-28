@@ -1,0 +1,26 @@
+page-chat {
+    #message-row
+    {
+        width:100%;
+        position: fixed;
+        bottom:75px;
+
+    }
+    #history-row{
+        background: Color($colors,light);
+    }
+    .message{
+        max-width:100%;
+        .text{
+            max-width:100%;
+        }
+        .from{
+            font-size:12px;
+            text-align: left;
+        }
+        .time{
+            font-size:10px;
+            text-align: right;
+        }
+    }
+}
