@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Chat</ion-title>
+    <ion-title>Chat - {{chatProvider.Me.uuid }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -11,7 +11,14 @@
   <ion-grid>
     <ion-row id="history-row">
       <ion-col col-12>
-        <ion-card color="primary" class="message">
+        <ion-card color="primary" class="message" *ngFor="let item of history">
+          <ion-card-content>
+              <p class="from">{{ item.sender.uuid}}:</p>
+              <p class="text">{{ item.data.text }}</p>
+              <p class="time">{{ item.data.time | date: 'shortTime' }}</p>
+          </ion-card-content>
+        </ion-card>
+        <!-- <ion-card color="primary" class="message">
           <ion-card-content>
               <p class="from">Fernando:</p>
               <p>Hola como andas?</p>
@@ -25,19 +32,19 @@
               <p class="text">Lorem ipsum dolor sit amet, lorem ipsum. dolor sit amet</p>
               <p class="time">5:53p.m.</p>
           </ion-card-content>
-        </ion-card>
+        </ion-card> -->
       </ion-col>
     </ion-row>   
     <ion-row id="message-row">
       <ion-col col-9>
         <ion-list>        
           <ion-item>
-            <ion-input placeholder="Write a message" type="text"></ion-input>
+            <ion-input placeholder="Write a message" type="text" [(ngModel)]="message"></ion-input>
           </ion-item>        
         </ion-list>
       </ion-col>
       <ion-col col-3>
-        <button ion-button icon-only full color="success">
+        <button ion-button icon-only full color="success" (click)="send()">
           <ion-icon name="send"></ion-icon>
         </button>
       </ion-col>

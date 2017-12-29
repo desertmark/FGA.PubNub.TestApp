@@ -3,8 +3,8 @@ page-chat {
     {
         width:100%;
         position: fixed;
-        bottom:75px;
-
+        bottom:45px;
+        padding-right:10px;     
     }
     #history-row{
         background: Color($colors,light);
